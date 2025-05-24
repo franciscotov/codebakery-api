@@ -3,23 +3,26 @@ const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 const { userInfo } = require("os");
-const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DATABASE_URL } = process.env;
 
 let sequelize = null
-if(process.env.DATABASE_URL){
-  const URLDB = process.env.DATABASE_URL
-  console.log('mysql')
-  sequelize = new Sequelize(URLDB,{
+if(DATABASE_URL){
+  sequelize = new Sequelize(DATABASE_URL,{
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-    dialect: "mysql",
+    dialect: "postgres",
+    protocol: "postgres",
     dialectOptions: {
       native: true,
-      ssl: false
+      ssl: DATABASE_URL
+        ? {
+            require: true,
+            rejectUnauthorized: false,
+          }
+        : "",
       }
     })
 }else{
-  console.log('postgres')
   sequelize = new Sequelize(
     `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/postgres`,
     {

@@ -92,21 +92,21 @@ async function dataPopulation() {
     await modifyOrderStatus(1, "cancelled");
 
 
-    await conn.query("insert into `product-category` (productId,categoryId) values (1,1)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (1,2)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (1,3)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (2,2)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (2,3)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (3,4)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (3,5)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (3,6)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (4,1)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (4,2)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (5,5)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (6,1)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (7,2)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (8,3)")
-    await conn.query("insert into `product-category` (productId,categoryId) values (9,4)")
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (1,1)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (1,2)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (1,3)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (2,2)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (2,3)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (3,4)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (3,5)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (3,6)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (4,1)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (4,2)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (5,5)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (6,1)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (7,2)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (8,3)')
+    await conn.query('insert into "product-category" ("productId", "categoryId") values (9,4)')
 
     //Pruebas no debe ir
     const user = await Users.findOne({

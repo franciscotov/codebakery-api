@@ -7,7 +7,8 @@
     "start:production": "node index.js",
     "start": "nodemon -L",
     "forever": "forever index.js",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "test": "mocha -w ./tests/**/*.spec.js",
+    "install:personal": "npm_config_userconfig=./.npmrc npm install"
   },
   "author": "Dev5",
   "license": "ISC",
