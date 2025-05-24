@@ -1,0 +1,19 @@
+mutation modifyOrderStatus($orderId:Int!, $status:String!){
+	  modifyOrderStatus(orderId:$orderId, status:$status)
+	  {
+		... on booleanResponse{
+		  boolean
+		}
+		... on error{
+      	  name
+		  detail
+		}
+	}
+}
+
+variables
+
+{
+  "orderId": 4,
+  "status": "paid"
+}
